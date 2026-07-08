@@ -7,11 +7,15 @@ export default class PersonList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://q76xnqzf38.execute-api.us-west-2.amazonaws.com/prod/get-person`)
+    axios.get(`https://w9sjbonjxf.execute-api.us-west-2.amazonaws.com/prod/brian-capstone`)
       .then(res => {
-        const persons = res.data.body;
+        const persons = res.data;
         this.setState({ persons });
+        console.log(persons);
       })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   }
 
   render() {
@@ -20,7 +24,7 @@ export default class PersonList extends React.Component {
         {
           this.state.persons
             .map(person =>
-              <li key={person.id}>{person.id}{person.name}</li>
+              <li key={person.id}>{person.id} - {person.name}</li>
             )
         }
       </ul>

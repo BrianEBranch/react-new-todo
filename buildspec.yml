@@ -8,12 +8,12 @@ phases:
       - echo logging in to AWS ECR...- $(aws ecr get-login --no-include-email --regionus-east- 1)
   build:
     commands:
-      - echo build Docker image on 'date"
+      - echo build Docker image on 'date'
       - cd src
-      - docker build -t <image name>:latest .
-      - docker tag <image name>: latest <ECR repository URI>: latest 
+      - docker build -t <myreactapp>:v1 .
+      - docker tag <myreactapp>:v1 <962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo>:v1
   post_build: 
     commands:
       - echo build Docker image complete date"
       - echo push latest Docker images to ECR...
-      - docker push <ECR repository URI>: latest
+      - docker push <962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo>:v1
