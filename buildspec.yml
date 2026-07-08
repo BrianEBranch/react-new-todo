@@ -10,10 +10,10 @@ phases:
     commands:
       - echo build Docker image on 'date'
       - cd src
-      - docker build -t <myreactapp>:latest .
-      - docker tag <myreactapp>:latest <https://w9sjbonjxf.execute-api.us-west-2.amazonaws.com/prod/brian-capstone>:latest
+      - docker build -t myreactapp:latest .
+      - docker tag myreactapp:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo:latest
   post_build:   
     commands:
       - echo build Docker image complete 'date'
       - echo push latest Docker images to ECR...
-      - docker push <https://w9sjbonjxf.execute-api.us-west-2.amazonaws.com/prod/brian-capstone>:latest
+      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo:latest
