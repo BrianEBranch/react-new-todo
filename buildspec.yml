@@ -19,7 +19,7 @@ phases:
       - echo push latest Docker images to ECR...
       - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo:latest
       - echo writing image definitions file...
-      - printf '[{"name":"brian_capstone_task-service-kjnymx3o", "imageUri":"962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"brian_capstone_task:1", "imageUri":"962804699607.dkr.ecr.us-west-2.amazonaws.com/brian/react-new-todo:latest"}]' > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
 
